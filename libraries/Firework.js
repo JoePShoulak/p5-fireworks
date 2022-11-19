@@ -17,6 +17,7 @@ class Firework {
 
     for (let i = 0; i < Firework.burstCount; i++) {
       const newP = new Particle(pos.x, pos.y);
+      newP.age = 1;
       newP.vel = Vector.random.mult(Firework.burstVel);
       this.particles.push(newP);
     }
