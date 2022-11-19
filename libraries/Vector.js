@@ -16,9 +16,7 @@ class Vector {
 
   add(obj) {
     if (obj instanceof Vector) {
-      Object.keys(this).forEach((key) => {
-        this[key] += obj[key];
-      });
+      Object.keys(this).forEach((key) => (this[key] += obj[key]));
       return this;
     }
 
@@ -28,9 +26,7 @@ class Vector {
 
   mult(obj) {
     if (obj instanceof Vector) {
-      Object.keys(this).forEach((key) => {
-        this[key] *= obj[key];
-      });
+      Object.keys(this).forEach((key) => (this[key] *= obj[key]));
       return this;
     }
 
