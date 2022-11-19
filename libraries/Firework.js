@@ -12,6 +12,10 @@ class Firework {
     this.bursted = false;
   }
 
+  get alive() {
+    return this.particles.some((p) => p.alive);
+  }
+
   burst() {
     const { pos } = this.particles.pop();
 

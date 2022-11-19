@@ -13,10 +13,6 @@ function onScreen(obj) {
   return obj.x > 0 && obj.x < width && obj.y > 0 && obj.y < height;
 }
 
-// function mousePressed() {
-//   fireworks.push(new Firework());
-// }
-
 function setup() {
   createCanvas(innerWidth, innerHeight);
   stroke("white");
@@ -38,5 +34,5 @@ function draw() {
 
   fireworks.forEach((firework) => firework.update());
 
-  fireworks = fireworks.filter(({ particles }) => onScreen(particles));
+  fireworks = fireworks.filter((f) => onScreen(f.particles) && f.alive);
 }

@@ -15,6 +15,10 @@ class Particle {
     this.age = age ?? null;
   }
 
+  get alive() {
+    return this.age ? this.age < 255 : true;
+  }
+
   applyForce(force) {
     this.acc.add(force);
   }
