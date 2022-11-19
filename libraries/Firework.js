@@ -29,7 +29,7 @@ class Firework {
       const randomVel = bVel.min + Math.random() * (bVel.max - bVel.min);
 
       const newP = new Particle(pos.x, pos.y);
-      newP.vel = Vector.random.mult(randomVel);
+      newP.vel = Vector.random2d.mult(randomVel);
       newP.age = 1;
 
       this.particles.push(newP);

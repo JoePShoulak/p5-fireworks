@@ -9,8 +9,8 @@ class Particle {
 
   constructor(x, y, color, age) {
     this.pos = new Vector(x, y);
-    this.vel = Vector.zero;
-    this.acc = Vector.zero;
+    this.vel = Vector.zero();
+    this.acc = Vector.zero();
     this.color = color ?? hexToRgb(randomFrom(Particle.colors));
     this.age = age ?? null;
   }
