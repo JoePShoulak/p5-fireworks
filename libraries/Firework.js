@@ -2,7 +2,7 @@ class Firework {
   static vStartMax = -15;
   static gravity = new Vector(0, 0.2);
   static burstCount = 100;
-  static burstVel = { min: 1, max: 3 };
+  static burstVel = 3;
 
   static updateCallback() {}
 
@@ -11,7 +11,7 @@ class Firework {
   }
 
   constructor() {
-    const seed = new Particle(Math.random() * width, height, "white");
+    const seed = new Particle(Math.random() * width, height, [255, 255, 255]);
     seed.vel = new Vector(0, Math.random() * Firework.vStartMax);
     this.particles = [seed];
     this.bursted = false;
@@ -25,11 +25,8 @@ class Firework {
     const { pos } = this.particles.pop();
 
     for (let i = 0; i < Firework.burstCount; i++) {
-      const bVel = Firework.burstVel;
-      const randomVel = bVel.min + Math.random() * (bVel.max - bVel.min);
-
       const newP = new Particle(pos.x, pos.y);
-      newP.vel = Vector.random2d.mult(randomVel);
+      newP.vel = Vector.random2d.mult(Math.random() * Firework.burstVel);
       newP.age = 1;
 
       this.particles.push(newP);

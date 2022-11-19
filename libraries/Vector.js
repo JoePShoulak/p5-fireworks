@@ -9,18 +9,9 @@ class Vector {
     return new Vector(Math.cos(angle), Math.sin(angle));
   }
 
-  constructor(x, y, ...args) {
+  constructor(x, y) {
     this.x = x;
     this.y = y;
-
-    if (args) this.z = args.shift();
-
-    if (args) {
-      const alpha = "abcdefghijklmnopqrstuvw";
-      args.forEach((arg, i) => {
-        this[alpha[i]] = arg;
-      });
-    }
   }
 
   add(obj) {
@@ -48,6 +39,9 @@ class Vector {
   }
 
   valueOf() {
-    return Math.sqrt(Object.values(this).reduce((v) => v ** 2, 0));
+    const sum = Object.values(this).reduce((acc, cur) => {
+      return acc + cur ** 2;
+    }, 0);
+    return Math.sqrt(sum);
   }
 }

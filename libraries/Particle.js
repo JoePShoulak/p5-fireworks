@@ -35,6 +35,8 @@ class Particle {
     if (this.age) {
       this.color[3] = 255 - this.age;
       this.age += Particle.ageRate;
+    } else {
+      this.color[3] = (this.vel * 5) ** 1.5;
     }
 
     Particle.updateCallback(this);

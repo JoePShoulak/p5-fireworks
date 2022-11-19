@@ -1,5 +1,7 @@
-let fireworks = [];
 const FIREWORK_RATIO = 0.00000005;
+const BG_ALPHA = 60;
+
+let fireworks = [];
 let firework_rate;
 
 function windowResized() {
@@ -31,12 +33,11 @@ function setup() {
 
   reset();
 
-  fireworks.push(new Firework());
   background(0);
 }
 
 function draw() {
-  background(0, 60);
+  background(0, BG_ALPHA);
 
   if (random() < firework_rate) fireworks.push(new Firework());
 
