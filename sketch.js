@@ -25,6 +25,7 @@ function setup() {
   createCanvas(innerWidth, innerHeight);
   stroke("white");
   strokeWeight(10);
+  background(0);
 
   Particle.updateCallback = (particle) => {
     stroke(particle.color);
@@ -32,8 +33,6 @@ function setup() {
   };
 
   reset();
-
-  background(0);
 }
 
 function draw() {

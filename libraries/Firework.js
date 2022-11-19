@@ -67,6 +67,7 @@ class Firework {
   }
 
   burst() {
+    this.bursted = true;
     const { pos } = this.particles.pop();
 
     for (let i = 0; i < Firework.burstCount; i++) {
@@ -76,8 +77,6 @@ class Firework {
 
       this.particles.push(newP);
     }
-
-    this.bursted = true;
   }
 
   update() {
