@@ -2,7 +2,7 @@ class Firework {
   static vStartMax = -15;
   static gravity = new Vector(0, 0.2);
   static burstCount = 100;
-  static burstVel = { min: 0.25, max: 3 };
+  static burstVel = { min: 1, max: 3 };
 
   static updateCallback() {}
 
