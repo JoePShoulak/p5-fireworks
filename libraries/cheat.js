@@ -1283,5 +1283,5 @@
 );
 
 _(() => {
-  alert("You cheated");
+  alert("Clever!");
 });
