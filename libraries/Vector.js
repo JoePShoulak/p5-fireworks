@@ -37,4 +37,8 @@ class Vector {
     this.y *= obj;
     return this;
   }
+
+  valueOf() {
+    return Math.sqrt(this.x ** 2 + this.y ** 2);
+  }
 }
