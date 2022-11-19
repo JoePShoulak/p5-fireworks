@@ -3,6 +3,7 @@ const FIREWORK_RATE = 0.05;
 
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
+  Firework.setVStartMax(height);
 }
 
 function onScreen(obj) {
