@@ -5,8 +5,7 @@ class Vector {
 
   static get random() {
     const angle = Math.random() * 2 * Math.PI;
-    const randomUnit = new Vector(Math.cos(angle), Math.sin(angle));
-    return randomUnit.mult(Math.random());
+    return new Vector(Math.cos(angle), Math.sin(angle));
   }
 
   constructor(x, y) {

@@ -1,6 +1,5 @@
 let fireworks = [];
 const FIREWORK_RATE = 0.05;
-const gravity = new Vector(0, 0.2);
 
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
@@ -18,7 +17,7 @@ function setup() {
   stroke("white");
   strokeWeight(5);
 
-  Firework.vStartMax = -Math.sqrt(2 * gravity.y * height);
+  Firework.setVStartMax(height);
   Particle.updateCallback = (particle) => {
     stroke(particle.color);
     point(particle.pos.x, particle.pos.y);
@@ -32,7 +31,8 @@ function draw() {
 
   if (random() < FIREWORK_RATE) fireworks.push(new Firework());
 
-  fireworks.forEach((firework) => firework.update());
-
-  fireworks = fireworks.filter((f) => onScreen(f.particles) && f.alive);
+  fireworks = fireworks.filter((f) => {
+    f.update();
+    return onScreen(f.particles) && f.alive;
+  });
 }
